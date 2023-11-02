@@ -21,53 +21,24 @@
   </head>
   <body>
     <main>
- <h1>Dev'Coffee</h1>
-      function getUserMedia(constraints) {
-  // if Promise-based API is available, use it
-  if (navigator.mediaDevices) {
-    return navigator.mediaDevices.getUserMedia(constraints);
-  }
+<div class="columns">
+  <div class="column">
+    <p><button type="button" onclick="getStream('video')">Grab video</button></p>
     
-  // otherwise try falling back to old, possibly prefixed API...
-  var legacyApi = navigator.getUserMedia || navigator.webkitGetUserMedia ||
-    navigator.mozGetUserMedia || navigator.msGetUserMedia;
+    <video controls autoplay style="height:180px; width: 240px;"></video>
+  </div>
+  <div class="column">
+    <p><button type="button" onclick="getStream('audio')">Grab audio</button></p>
     
-  if (legacyApi) {
-    // ...and promisify it
-    return new Promise(function (resolve, reject) {
-      legacyApi.bind(navigator)(constraints, resolve, reject);
-    });
-  }
-}
+    <audio controls></audio>
+  </div>
+</div>
+      <p><button onclick="getStream()">Grab video</button></p>
+<p><video autoplay style="height: 180px; width: 240px;"></video></p>
+<p><button onclick="takePhoto()">Take Photo!</button></p>
+<p><img id="imageTag" width="240" height="180"></p>
 
-function getStream (type) {
-  if (!navigator.mediaDevices && !navigator.getUserMedia && !navigator.webkitGetUserMedia &&
-    !navigator.mozGetUserMedia && !navigator.msGetUserMedia) {
-    alert('User Media API not supported.');
-    return;
-  }
-
-  var constraints = {};
-  constraints[type] = true;
-  
-  getUserMedia(constraints)
-    .then(function (stream) {
-      var mediaControl = document.querySelector(type);
-      
-      if ('srcObject' in mediaControl) {
-        mediaControl.srcObject = stream;
-      } else if (navigator.mozGetUserMedia) {
-        mediaControl.mozSrcObject = stream;
-      } else {
-        mediaControl.src = (window.URL || window.webkitURL).createObjectURL(stream);
-      }
-      
-      mediaControl.play();
-    })
-    .catch(function (err) {
-      alert('Error: ' + err);
-    });
-
+<p><small>Demo by <a href="http://www.mcasas.tk/" target="_blank" rel="noopener">Miguel Casas-Sanchez</a>.</small></p>
       
       <nav>
       <!--  <h1>Dev'Coffee</h1>
