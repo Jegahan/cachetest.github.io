@@ -20,7 +20,6 @@
     <title>Dev'Coffee PWA</title> -->
   </head>
   <body>
-    <main>
 <div class="columns">
   <div class="column">
     <p><button type="button" onclick="getStream('video')">Grab video</button></p>
@@ -33,19 +32,21 @@
     <audio controls></audio>
   </div>
 </div>
-      <p><button onclick="getStream()">Grab video</button></p>
+
+    <p><button onclick="getStream()">Grab video</button></p>
 <p><video autoplay style="height: 180px; width: 240px;"></video></p>
 <p><button onclick="takePhoto()">Take Photo!</button></p>
 <p><img id="imageTag" width="240" height="180"></p>
 
 <p><small>Demo by <a href="http://www.mcasas.tk/" target="_blank" rel="noopener">Miguel Casas-Sanchez</a>.</small></p>
-      <video autoplay style="height:180px; width: 240px;" poster="https://image.freepik.com/free-icon/video-camera-symbol_318-40225.png"></video>
+
+    <video autoplay style="height:180px; width: 240px;" poster="https://image.freepik.com/free-icon/video-camera-symbol_318-40225.png"></video>
 <p><button onclick="getStream()">Grab video & start recording</button></p>
 <p><button onclick="download()">Download!</button></p>
   
 <p><small>Demo by <a href="http://www.mcasas.tk/" target="_blank" rel="noopener">Miguel Casas-Sanchez</a>.</small></p>
 
-      <p><button onclick="getStream()">Grab video & start local peer connection</button></p>
+    <p><button onclick="getStream()">Grab video & start local peer connection</button></p>
 
 <p>Local video</p>
 <video autoplay id="localVideo" style="height:180px; width: 240px;" poster="https://image.freepik.com/free-icon/video-camera-symbol_318-40225.png"></video>
@@ -54,22 +55,7 @@
 <video autoplay id="remoteVideo" style="height:180px; width: 240px;"></video>
 
 <p><small>Demo by <a href="http://www.mcasas.tk/" target="_blank" rel="noopener">Miguel Casas-Sanchez</a>.</small></p>
-   
-      
-     <p>
-  <label>Engine</label>
-</p>
-<div role="group" id="selectEngine">
-  <input type="radio" name="engine" value="localStorage" checked/> Persistent Storage
-  <input type="radio" name="engine" value="sessionStorage"/> Per-Session Storage
-</div>
-
-<p>
-  <label for="value">Value for <code>myKey</code></label>
-  <input type="text" id="value">
-</p>
-
-<p>Open the example in another tab and change the value there to see the synchronization via <code>storage</code> event.</p> 
+    
       
       <!--  <nav>
         <h1>Dev'Coffee</h1>
