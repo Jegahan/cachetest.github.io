@@ -54,7 +54,24 @@
 <video autoplay id="remoteVideo" style="height:180px; width: 240px;"></video>
 
 <p><small>Demo by <a href="http://www.mcasas.tk/" target="_blank" rel="noopener">Miguel Casas-Sanchez</a>.</small></p>
-    <!--  <nav>
+   
+      
+     <p>
+  <label>Engine</label>
+</p>
+<div role="group" id="selectEngine">
+  <input type="radio" name="engine" value="localStorage" checked/> Persistent Storage
+  <input type="radio" name="engine" value="sessionStorage"/> Per-Session Storage
+</div>
+
+<p>
+  <label for="value">Value for <code>myKey</code></label>
+  <input type="text" id="value">
+</p>
+
+<p>Open the example in another tab and change the value there to see the synchronization via <code>storage</code> event.</p> 
+      
+      <!--  <nav>
         <h1>Dev'Coffee</h1>
         <ul>
           <li>Home</li>
